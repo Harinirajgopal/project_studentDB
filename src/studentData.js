@@ -13,7 +13,7 @@ function StudentData() {
     let options = ['id', 'Name', 'City', 'RollNO', 'EmailId', 'Mobile', 'Course', 'DOJ']
 
     useEffect(() => {
-        fetch("https://student-db-2u3s.onrender.com/StudentDatabase")
+        fetch("https://studbackend-s8i5.onrender.com/StudentDatabase")
             .then((res) => {
                 return res.json();
             })
@@ -30,7 +30,7 @@ function StudentData() {
 
     const handleSearch = async (e) => {
         e.preventDefault()
-        return await axios.get(`https://student-db-2u3s.onrender.com/StudentDatabase?q=${value}`)
+        return await axios.get(`https://studbackend-s8i5.onrender.com/StudentDatabase?q=${value}`)
             .then((res) => {
                 setData(res.data)
             })
@@ -40,7 +40,7 @@ function StudentData() {
         e.preventDefault()
         let value = e.target.value
         setSort(value)
-        return await axios.get(`https://student-db-2u3s.onrender.com/StudentDatabase?_sort=${value}&_order=asc`)
+        return await axios.get(`https://studbackend-s8i5.onrender.com/StudentDatabase?_sort=${value}&_order=asc`)
             .then((res) => {
                 setData(res.data)
             })
@@ -54,7 +54,7 @@ function StudentData() {
     }
 
     const ChangeDelete = (id) => {
-        fetch("https://student-db-2u3s.onrender.com/StudentDatabase/" + id, {
+        fetch("https://studbackend-s8i5.onrender.com/StudentDatabase/" + id, {
             method: "DELETE"
         })
             .then(() => {

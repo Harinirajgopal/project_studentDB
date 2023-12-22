@@ -17,7 +17,7 @@ function StudentEditForm(){
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch("https://student-db-2u3s.onrender.com/StudentDatabase/" + stid)
+    fetch("https://studbackend-s8i5.onrender.com/StudentDatabase/" + stid)
       .then((res) => {
         return res.json();
       })
@@ -70,7 +70,7 @@ function StudentEditForm(){
   const formSubmit = (e) => {
     e.preventDefault()
     let data = { id, Name, City, RollNO, EmailId, Mobile, Course, DOJ }
-    fetch("https://student-db-2u3s.onrender.com/StudentDatabase/" + stid, {
+    fetch("https://studbackend-s8i5.onrender.com/StudentDatabase/" + stid, {
       method: "PUT",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(data)
